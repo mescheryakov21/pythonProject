@@ -1,0 +1,15 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>venv\r\nmain.py\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision d5ee9eb9fe5985b6b924ff9456c238a293d3884f)
++++ b/.gitignore	(date 1646222223979)
+@@ -1,2 +1,3 @@
+-venv
++/venv/
+ main.py
++
