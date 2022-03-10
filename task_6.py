@@ -15,7 +15,9 @@ for i in range(10):
         break
     elif a > sym:
         print(f"Загаданное Число меньше {a}")
-    elif i == 9:
-        print(f"Вы не угадали, загаданное число {sym}")
     else:
         print(f"Загаданное Число больше {a}")
+    if i == 9:
+        print(f"Вы не угадали, загаданное число {sym}")
+    else:
+        continue
