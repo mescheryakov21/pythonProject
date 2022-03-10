@@ -4,14 +4,7 @@
   в табличной форме: по десять пар «код-символ» в каждой строке
 '''
 
-def printing(k, i) :
-    if k < 127:
-        if i < 10:
-            return str(k) +"-" +chr(k) + " " +printing(k+1, i+1)
-        return str(k) +"-" +chr(k)
-    return str(k) +"-" +chr(k)
-
-k = 32
-while k < 127:
-    print(printing(k,1))
-    k += 10
+for i in range(32, 128):
+    print(f'{i} : {chr(i)}', end=' ')
+    if (i+1-32) % 10 == 0:
+        print()
