@@ -4,6 +4,12 @@
 '''
 import random
 
+def summary(arr_n, st, fn):
+    sum = 0
+    for i in range(st + 1, fn):
+        sum += arr_n[i]
+    print(f'Сумма между минимальным и максимальным элементом в массиве равна: {sum}')
+
 arr_first = [random.randint(-5, 5) for _ in range(10)]
 print(arr_first)
 item_max_v = arr_first[0]
@@ -23,7 +29,6 @@ if start_sum == finish_sum:
     print(f'Минимальное и максимальное число одно и тоже {item_min_v}')
 elif start_sum > finish_sum:
     start_sum, finish_sum = finish_sum, start_sum
-sum=0
-for i in range(start_sum+1, finish_sum):
-    sum += arr_first[i]
-print(sum)
+    summary(arr_first, start_sum, finish_sum)
+else:
+    summary(arr_first, start_sum, finish_sum)
