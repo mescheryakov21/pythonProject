@@ -9,7 +9,11 @@
 def prost_1(n):
    if n == 0:
        return 0
-   k = pow(n, 2) + 2
+   result = [] * n
+   k = 1
+   if result[n-1] != None:
+       return result[n - 1]
+   while n > len(result)
    start_list = [i for i in range(k)]
    start_list[1] = 0
    for i in range(2, k):
