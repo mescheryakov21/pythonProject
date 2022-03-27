@@ -1,0 +1,11 @@
+from collections import Counter
+a = Counter()
+# print(a)
+b = Counter(a = 2, v = 3, c = -1)
+# print(b)
+c = Counter('sfwefwaewefga')
+# print(b)
+# print(list(b.elements()))
+# print(b.most_common(1))
+c.subtract(b)
+print(c)
