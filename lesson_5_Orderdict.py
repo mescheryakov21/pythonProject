@@ -7,7 +7,7 @@ print(new_a)
 new_b = OrderedDict(reversed(sorted(a.items(), key=lambda x: x[1])))
 print(new_b)
 
-new_b.move_to_end('mouse', last=False)
+new_b.move_to_end('mouse')
 print(new_b)
 # print("*" * 50)
 # print(a == b)
