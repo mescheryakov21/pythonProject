@@ -17,14 +17,17 @@ def sum_hex(a, b, l, dict_val):
     sum_pos_up = 0 
     for i in range(l-1, -1, -1):
         sum_first = sum_pos_up + dict_val.get(a[i]) + dict_val.get(b[i])
-        if sum_first > 16:
+        if sum_first >= 16:
             sum_pos1 = sum_first % 16
             sum_pos_up = sum_first // 16
         else:
             sum_pos1 = sum_first
             sum_pos_up = 0
-
-        sum_list.append(sum_pos1)
+        if i == 0 and sum_pos_up > 0:
+            sum_list.append(sum_pos1)
+            sum_list.append(sum_pos_up)
+        else:
+            sum_list.append(sum_pos1)
     return mod_hex(sum_list, dict_val)
 
 
