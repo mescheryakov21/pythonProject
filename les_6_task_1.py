@@ -20,7 +20,7 @@ def func_1():  # Рекурсия
         print(printing(k, 1))
         k += 10
     print("*" * 50)
-    print(sys.getsizeof(k)) # Занимает по 28 бит переменная "k" и "i" , так как оба типа целые числа
+    print(sys.getsizeof(k)) # Занимает по 28 байт переменная "k" и "i" , так как оба типа целые числа
 
 
 
@@ -35,7 +35,7 @@ def func_2(): #Цикл
             print(f'{i}-{k}', end=' ')
     print()
     print("*" * 50)
-    print(sys.getsizeof(k)) #Занимает 50 бит переменная "k", так как типа Строка, и 28 бит переменная "i"
+    print(sys.getsizeof(k)) #Занимает 50 байт переменная "k", так как типа Строка, и 28 бит переменная "i"
 
 
 def func_3(): # словарь
@@ -48,8 +48,8 @@ def func_3(): # словарь
         else:
             print(key, value, sep= '-', end=' ')
             print()
-    print(sys.getsizeof(alphavit_dict)) # Переменная "key" 28 бит типа Целое
-                                        # Переменная "value 50 бит тип Строка
-                                        # Словарь занимает 4696 бит
+    print(sys.getsizeof(alphavit_dict)) # Переменная "key" 28 байт типа Целое
+                                        # Переменная "value 50 байт тип Строка
+                                        # Словарь занимает 4696 байт
 
 func_3()
