@@ -7,8 +7,8 @@ import random
 
 m = int(input('Введите натуральное число m для расчета размера массива: '))
 l = 2 * m + 1
-array_ramd = [random.randint(-1, 1) for i in range(l)]
-print(array_ramd)
+array_ramd = [random.randint(-10, 10) for i in range(l)]
+
 n = 0
 while n < len(array_ramd):
     z = array_ramd[n]
@@ -34,8 +34,8 @@ while n < len(array_ramd):
     if men == bol:
         break
     n += 1
+
+print(array_ramd)
 array_ramd.sort()
-if z == array_ramd[l // 2]:
-    print(True)
-else:
-    print(False)
+print(array_ramd)
+print(f"Медианной является число {z}")
