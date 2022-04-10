@@ -15,24 +15,26 @@ b. постарайтесь сделать алгоритм умнее, но п�
 import random
 
 def sort(array):
+    '''
+    :param array: -  Принимает не отсортированный массив
+    :return:  - Возвращает отсортированный массив
+    '''
     n = 1
     while n < len(array):
+        k = 0 # Cчетчик перестановок
         for i in range(len(array) - n):
             if array[i] < array[i + 1]:
                 array[i + 1], array[i] = array[i], array[i + 1]
+                k += 1
         n += 1
-    print(array)
+        if k == 0:
+            break
+    return array
 
-size = 10
+size = 20
 array_ramd = [random.randint(-100, 99) for i in range(size)]
 print(array_ramd)
-sort(array_ramd)
+print(sort(array_ramd))
 
 
-# cProfile.run('sort(array_ramd)')
-
-# без модификации
-#для 10 - 24 function calls in 0.000 seconds
-#для 100 - 204 function calls in 0.003 seconds
-#для 1000 - 2004 function calls in 0.232 seconds
 
