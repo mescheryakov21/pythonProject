@@ -16,7 +16,7 @@ import random
 
 def sort(array):
     '''
-    одифицированная сортировка пузырьком, если перестановок не было за последующую итерацию,
+    модифицированная сортировка пузырьком, если перестановок не было за последующую итерацию,
      тогда сортировка окончена
     :param array: -  Принимает не отсортированный массив
     :return:  -  отсортированный массив
@@ -34,7 +34,7 @@ def sort(array):
     return array
 
 size = 20
-array_ramd = [random.randint(-100, 99) for i in range(size)]
+array_ramd = [random.randint(-100, 100) for i in range(size)]
 print(array_ramd)
 print(sort(array_ramd))
 

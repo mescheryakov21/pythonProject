@@ -32,7 +32,7 @@ def slit_arr(arr):
         c.extend(b[l:])
     return c
 
-size = 100
-array_ramd = [random.randint(0, 49) for i in range(size)]
+size = 10
+array_ramd = [random.uniform(0, 50) for i in range(size)]
 print(array_ramd)
 print(slit_arr(array_ramd))
