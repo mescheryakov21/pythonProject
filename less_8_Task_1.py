@@ -3,11 +3,14 @@
 Сколько рукопожатий было?
 Примечание. Решите задачу при помощи построения графа
 '''
-from math import factorial
 
-def test(n):
-    return factorial(n - 1)
+n = int(input("Введите количество встретившихся друзей: "))
+edges = []
+for i in range(n):
+    for k in range(i + 1, n):
+        edges.append([i, k])
+
+print(f"Всего рукопожатий между друзьми было {len(edges)}")
 
 
-n = int(input("Введите количество всзретившихся друзей: "))
-print(test(n))
+
