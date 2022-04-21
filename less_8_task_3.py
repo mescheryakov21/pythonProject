@@ -34,16 +34,35 @@ def graph_dfs(g,start, finish):
     :return: Возвращает путь
     '''
     parents = [None for _ in range(len(g))]  # хранение Вершин родителей
+    way = []
     is_visit = [False for _ in range(len(g))]  # список вершин в которых были уже
     is_visit[start] = True  # вершина начала движения уже через нее не проходим
     deq = deque([start])
+    print(recu(start))
 
+    def recu(vert):
+        if vert == finish:
+            return way.append(finish)
+        for i in g[vert]:
+            recu(i)
+            spam = way.pop()
+            if spam in g[vert]:
+                way.append(spam)
+                return way.append(vert)
+            way.append(spam)
+        return way
 
     pass
 
-graph = gen_graph(5)
+# graph = gen_graph(5)
+graph = [[1],
+         [2],
+         [1, 4],
+         [2],
+         [1, 2]
+]
 print(*graph, sep='\n')
-s = int(input("Введите начальную вершину: "))
-f = int(input("Введите конечную вершину: "))
+s = 0 #int(input("Введите начальную вершину: "))
+f = 4 # int(input("Введите конечную вершину: "))
 graph_dfs(graph, s, f)
 
