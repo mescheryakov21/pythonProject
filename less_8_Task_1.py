@@ -6,9 +6,13 @@
 
 n = int(input("Введите количество встретившихся друзей: "))
 edges = []
-for i in range(n):
-    for k in range(i + 1, n):
-        edges.append([i, k])
+if n < 2:
+    print("Друзей не хватает для рукопожатия")
+else:
+    for i in range(n):
+        for k in range(i + 1, n):
+            edges.append([i, k])
+    print(edges)
 
 print(f"Всего рукопожатий между друзьми было {len(edges)}")
 
