@@ -18,22 +18,18 @@ def dijkstra(graph, start):
     is_visit = [False] * l
     cost = [float('inf')] * l
     parents = [-1] * l
-    way = []
 
     cost[start] = 0
     min_cost = 0
 
     while min_cost < float('inf'):
         is_visit[start] = True
-        way_spam = []
         for i, vertex in enumerate(graph[start]):
-            # way_spam.clear()
             if vertex != 0 and not is_visit[i]:
                 if cost[i] > vertex + cost[start]:
                      cost[i] = vertex + cost[start]
                      parents[i] = start
-        #     way_spam.append(i)
-        # way.extend(way_spam)
+
 
         min_cost = float('inf')
         for i in range(l):
@@ -41,9 +37,19 @@ def dijkstra(graph, start):
                 min_cost = cost[i]
                 start = i
 
-        way.append(way_spam)
-    return cost
+    result = [[] for _ in range(l)]
+
+    for i in range(l):
+        if is_visit[i]:
+            result[i].append(i)
+            j = i
+            while parents[j] != -1:
+                result[i].append(parents[j])
+                j = parents[j]
+            result[i].reverse()
+    return cost, result
 
 s = int(input('От какой вершины идти: '))
-print(dijkstra(g, s))
-# print(way)
+cost, ways = dijkstra(g, s)
+print(cost)
+print(*ways, sep='\n')
