@@ -7,7 +7,7 @@ from binarytree import bst, Node
 stroka = 'viva la vita'
 d = Counter(stroka)
 deq = deque(d)
-tree_hof = Node('')
+tree_hof = Node(-1)
 dict_spam = dict()
 print(d)
 print(deq)
@@ -23,5 +23,6 @@ while len(d) > 1:
         tree_hof.left = Node(key1)
     dict_spam[tree_hof] = item2 + item1
     d.update(dict_spam)
-    print(tree_hof)
-print(tree_hof)
+    print(d)
+#     print(tree_hof)
+# print(tree_hof)
