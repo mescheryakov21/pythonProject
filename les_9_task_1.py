@@ -6,3 +6,15 @@
 * без использования функций для вычисления хэша (hash(), sha1() или любой другой из модуля hashlib задача
  считается не решённой.
 '''
+
+def sub_count(s):
+    s_count = []
+    for i in range(len(s)-1):
+        for j in range(i + 1, len(s) + 1):
+            s_count.append((s[i:j]))
+    c = len(s_count)
+    return c
+
+my_str = input('Введите строку: ')
+count = sub_count(my_str)
+print(f'Количество подстрок в строке равно {count}')
